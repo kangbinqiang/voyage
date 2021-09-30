@@ -21,17 +21,36 @@
       // topMargin: 20,
       nameLink: '/',
       auto2top: true,
+      notFoundPage: '404.md',
       pagination: {
         previousText: '上一章节',
         nextText: '下一章节',
+      },
+      // search: 'auto', // default
+      //
+      search : {
+          placeholder: {
+            '/': 'Search',
+          }
       }
+      // complete configuration parameters
+      // search: {
+      //   noData: {
+      //     '/': 'No results!',
+      //   },
+      //   paths: 'auto',
+      //   placeholder: {
+      //     '/': 'Search',
+      //   }
+      // },
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-<!--  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 <!--  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>-->
-<!--  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 </html>
