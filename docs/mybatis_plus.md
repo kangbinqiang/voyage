@@ -28,9 +28,33 @@
 > **内置全局拦截插件**：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作
 
 ### 支持的数据库
-- mysql，oracle，db2，h2，hsql，sqlite，postgresql，sqlserver，Phoenix，Gauss ，clickhouse，Sybase，OceanBase，Firebird，cubrid，goldilocks，csiidb
-- 达梦数据库，虚谷数据库，人大金仓数据库，南大通用(华库)数据库，南大通用数据库，神通数据库，瀚高数据库
+> - mysql，oracle，db2，h2，hsql，sqlite，postgresql，sqlserver，Phoenix，Gauss ，clickhouse，Sybase，OceanBase，Firebird，cubrid，goldilocks，csiidb
+>
+>- 达梦数据库，虚谷数据库，人大金仓数据库，南大通用(华库)数据库，南大通用数据库，神通数据库，瀚高数据库
 
 ### 框架结构
-![框架结构](docs/images/Snipaste_2021-10-06_13-40-13.png)
+![框架结构](images/Snipaste_2021-10-06_13-40-13.png)
 
+### 添加依赖
+在`pom.xml`文件中添加依赖
+```xml
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>Latest Version</version>
+</dependency>
+```
+### 配置
+在`application.yml`文件中添加
+```yaml
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///database_name
+    username: database_username
+    password: database_password
+```
+在`SpringBoot`的启动类上添加`@MapperScan`注解，扫描`Mapper`文件夹
+```java
+@MapperScan("com.voyage.mapper")
+```
