@@ -114,6 +114,8 @@
 - 源码篇
 
   - [Updating](Updating.md)
+  
+  - [SpringBoot自动装配原理](enable_auto_config.md)
 
 
 - 算法篇
