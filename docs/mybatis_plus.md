@@ -1,6 +1,7 @@
 ## MyBatis-Plus :100:
-[官网](https://baomidou.com/)
-
+[官网](https://baomidou.com/) 
+上对MyBatis-Plus的用法和特性做了详细的描述，这里只做一个简单的引入，具体用法参考
+[官网](https://baomidou.com/) 
 ### 官网特性
 
 > **无侵入**：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑
@@ -28,9 +29,9 @@
 > **内置全局拦截插件**：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作
 
 ### 支持的数据库
-> - mysql，oracle，db2，h2，hsql，sqlite，postgresql，sqlserver，Phoenix，Gauss ，clickhouse，Sybase，OceanBase，Firebird，cubrid，goldilocks，csiidb
+> mysql，oracle，db2，h2，hsql，sqlite，postgresql，sqlserver，Phoenix，Gauss ，clickhouse，Sybase，OceanBase，Firebird，cubrid，goldilocks，csiidb
 >
->- 达梦数据库，虚谷数据库，人大金仓数据库，南大通用(华库)数据库，南大通用数据库，神通数据库，瀚高数据库
+> 达梦数据库，虚谷数据库，人大金仓数据库，南大通用(华库)数据库，南大通用数据库，神通数据库，瀚高数据库
 
 ### 框架结构
 ![框架结构](images/Snipaste_2021-10-06_13-40-13.png)
