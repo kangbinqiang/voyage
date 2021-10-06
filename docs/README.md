@@ -16,7 +16,7 @@
 > 该项目最终的目的是打造一款集借贷、投资与一体的平台，采用分布式解耦设计，使得用户以不同的身份在平台上完成交易，同时无缝对接第三方平台，使交易如丝般顺滑
 
 ## 项目架构
-![项目架构](https://voyage-docs.oss-cn-beijing.aliyuncs.com/voyage-architect.png?Expires=1633524223&OSSAccessKeyId=TMP.3KkKRwSFgfniXhRLy73XDdDAkJbFVoMaHBgmdoDez6C1uXqEY5aVpWH4awaMmdv1HeBUEjLoCe7G7GG66exj3jg8WoF3ty&Signature=3pjU95B29t8mMqp7okq7JPI90n0%3D&versionId=CAEQFhiBgIDpu9TV4hciIDA0M2Q5MjAxNWU5MjRjYTFiNjdiYTgyMzQ1MTE3ZjU2&response-content-type=application%2Foctet-stream)
+![项目架构](images/voyage-architect.png)
 
 
 ## 项目结构

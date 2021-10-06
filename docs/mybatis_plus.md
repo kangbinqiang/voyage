@@ -34,7 +34,7 @@
 > 达梦数据库，虚谷数据库，人大金仓数据库，南大通用(华库)数据库，南大通用数据库，神通数据库，瀚高数据库
 
 ### 框架结构
-![框架结构](https://voyage-docs.oss-cn-beijing.aliyuncs.com/Snipaste_2021-10-06_13-40-13.png?Expires=1633524251&OSSAccessKeyId=TMP.3KkKRwSFgfniXhRLy73XDdDAkJbFVoMaHBgmdoDez6C1uXqEY5aVpWH4awaMmdv1HeBUEjLoCe7G7GG66exj3jg8WoF3ty&Signature=%2BauP2BOB7x90lG66rgBa7J5%2BA2c%3D&versionId=CAEQFhiBgMCO09DQ4hciIDQ0ZGZhMDZjOTM1ODRjZGRiNzcxM2VhMzNkMjk2OWMy&response-content-type=application%2Foctet-stream)
+![框架结构](images/Snipaste_2021-10-06_13-40-13.png)
 
 ### 添加依赖
 在`pom.xml`文件中添加依赖

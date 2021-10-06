@@ -94,7 +94,7 @@ static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImp
 ```
 其实就是通过以上的方法获取扫描包的路径，即将启动类及其同目录下的子包中的`Bean`扫描，知道了这点之后再看
 `AutoConfigurationImportSelector.class`
-![AutoConfigurationImportSelector](https://voyage-docs.oss-cn-beijing.aliyuncs.com/Snipaste_2021-10-06_21-47-07.png?Expires=1633531752&OSSAccessKeyId=TMP.3KkKRwSFgfniXhRLy73XDdDAkJbFVoMaHBgmdoDez6C1uXqEY5aVpWH4awaMmdv1HeBUEjLoCe7G7GG66exj3jg8WoF3ty&Signature=j3hNCEfqtSTyeRxRZDM2ZAQDtr0%3D&versionId=CAEQFhiBgID.6bjX4hciIDVlNTI3Y2U0ZjQ5NDRjZGQ5OTlhZWI4OTUyZjE0NzAx&response-content-type=application%2Foctet-stream)
+![AutoConfigurationImportSelector](images/Snipaste_2021-10-06_21-47-07.png)
 从图中可以看出实现了`DeferredImportSelector`接口，而`DeferredImportSelector`继承`ImportSelector`类，
 且`ImportSelector`有一个重要的方法`selectImports(AnnotationMetadata annotationMetadata)`，`AutoConfigurationImportSelector`实现如下：
 ```java
@@ -191,7 +191,7 @@ org.mybatis.spring.boot.autoconfigure.MybatisLanguageDriverAutoConfiguration,\
 org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration
 ```
 
-!> 至此我们可以说Spring通过注解加载`META-INF/spring.factories`中的配置类，然后初始化到自己的容器中。
+?> 至此我们可以说Spring通过注解加载`META-INF/spring.factories`中的配置类，然后初始化到自己的容器中。
 
 
 
