@@ -1,6 +1,9 @@
 # Voyage交易平台  :100:
 
 ---
+> 后端地址：https://gitee.com/kangbinqiang/voyage
+>
+> 前端地址：
 
 ## 友情提示
 !> 该项目只可用于学习，若商业使用需进行二次开发
