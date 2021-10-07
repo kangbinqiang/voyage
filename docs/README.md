@@ -29,8 +29,7 @@ voyage
 ├── system -- 后端管理模块
 ├── loan -- 借款模块
 ├── invest -- 投资模块
-├── third-party -- 第三方平台
-└── pay -- 支付平台
+└── third -- 第三方平台
 ```
 
 ## 项目文档
@@ -103,6 +102,12 @@ voyage
     - SpringBoot自动装配原理
 - [x] 2021-10-07 
     - 创建后端工程
+      * 完成项目依赖注入
+      * 数据库创建
+      * Mybatis-Plus配置
+      * Druid配置
+      * 整合Swagger
+      * 整合nacos
     - Netty
 - [x] 2021-10-08 
     - 创建前端工程
