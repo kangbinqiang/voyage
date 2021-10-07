@@ -37,9 +37,8 @@ public @interface SpringBootApplication {
 
 }
 ```
-至于元注解`@Target`,`@Retention`,`@Documented`和`@Inherited`不做赘述
-继续跟进`@SpringBootConfiguration`
-```javas
+至于元注解`@Target`,`@Retention`,`@Documented`和`@Inherited`不做赘述，继续跟进`@SpringBootConfiguration`
+```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
