@@ -59,3 +59,91 @@ spring:
 ```java
 @MapperScan("com.voyage.mapper")
 ```
+### 生成主键
+
+> 配置雪花算法
+
+实体类配置：
+```java
+@TableId(type = IdType.ID_WORKER)
+private String id;
+```
+可供选择的：
+```java
+public enum IdType {
+    AUTO(0),
+    NONE(1),
+    INPUT(2),
+    ID_WORKER(3),
+    UUID(4),
+    ID_WORKER_STR(5);
+}
+```
+### 分页
+添加配置如下
+```java
+@Bean
+public PaginationInterceptor paginationInterceptor() {
+    return new PaginationInterceptor();
+}
+```
+使用
+```java
+@Override
+public Page<CodeConfig> list() {
+    Page<CodeConfig> page = new Page<>(0, 5);
+    return genConfigRepository.selectPage(page,null);
+}
+```
+测试
+```text
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45eb9e11] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@40914c5e] will not be managed by Spring
+==>  Preparing: SELECT id,table_name,api_alias,pack,module_name,path,api_path,author,prefix,cover,created_time,updated_time,is_delete AS isDeleted FROM v_code_config
+==> Parameters: 
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45eb9e11]
+```
+### 自动填充
+!> 在业务系统的开发过程中，有些字段和业务的耦合性不大，但是必须存在，这时候可以考虑解耦设计的自动填充
+
+实体类配置：
+```java
+@TableField(value = "created_time",fill = FieldFill.INSERT)
+private Date createdTime;
+
+@TableField(value = "updated_time",fill = FieldFill.INSERT_UPDATE)
+private Date updatedTime;
+```
+添加配置如下：
+```java
+@Slf4j
+@Component
+public class VoyageMetaObjectHandler implements MetaObjectHandler {
+
+    @Override
+    public void insertFill(MetaObject metaObject) {
+        log.info("start insert fill...");
+        this.setFieldValByName("createdTime", LocalDateTime.now(), metaObject);
+        this.setFieldValByName("updatedTime", LocalDateTime.now(), metaObject);
+    }
+
+    @Override
+    public void updateFill(MetaObject metaObject) {
+        log.info("start update fill...");
+        this.setFieldValByName("updatedTime", LocalDateTime.now(), metaObject);
+    }
+}
+```
+### 执行自定义SQL
+!> 有时业务需要执行一些特定的`SQL`，但是`Mybatis-Plus`提供的API不能完全胜任，需要写一些自定义的`SQL`
+在mapper中添加方法：
+```java
+@Select("select table_name ,create_time , engine, table_collation, table_comment from information_schema.tables where table_schema = (select database()) order by create_time desc")
+List<TableInfo> getAllTableInfo();
+
+@Select("select column_name, is_nullable, data_type, column_comment, column_key, extra from information_schema.columns where table_name = #{tableName} and table_schema = (select database()) order by ordinal_position")
+List<ColumnInfo> getColumnsByTableName(@Param("tableName") String tableName);
+```
+
